@@ -1,0 +1,95 @@
+package com.TestJ;
+import java.util.*;
+import java.util.stream.IntStream;
+
+import javax.swing.JOptionPane;
+public class UserInput {
+	static Scanner sc = new Scanner (System.in);
+public static void main (String args[]){
+	System.out.println("Enter Name : ");
+	if (sc.hasNextLine()){
+		String userName = sc.nextLine();
+		System.out.println("Hello "+ userName);
+		
+	}
+	String jopName =
+			JOptionPane.showInputDialog("Enter name : ");
+	System.out.println("hello " +jopName);
+	
+	// ---- CONDITIONALS ----
+			// Relational Operators : == != > < >= <=
+			// Logical Operators : ! && ||
+			int age = 12;
+			if ((age >= 5) && (age <= 6)){
+				System.out.println("Go to Kindergarten");
+			} else if ((age >= 7) && (age <= 13)){
+				System.out.println("Go to Middle School");
+			} else if ((age >= 14) && (age <= 18)){
+				System.out.println("Go to High School");
+			} else {
+				System.out.println("Stay Home");
+			}
+	 
+			System.out.println("true || false = "+(true || false));
+			System.out.println("!true = "+(!true));
+	 
+			// The ternary operator returns the 1st value
+			// when the condition is true and the 2nd
+			// otherwise
+			boolean canVote = (age >= 18) ? true : false;
+			System.out.println("Can Vote : "+canVote);
+	 
+			// Switch is used when you have limited options
+			String lang = "France";
+			switch(lang) {
+			case "Chile": case "Cuba":
+				System.out.println("Hola");
+	 
+				// Without break the next condition
+				// is checked
+				break;
+			case "France":
+				System.out.println("Bonjour");
+				break;
+			case "Japan":
+				System.out.println("Konnichiwa");
+				break;
+			default:
+				System.out.println("Hello");
+			}
+	 
+			// ---- LOOPING ----
+			for(int i = 0; i < 5; i++) {
+				System.out.println(i);
+			}
+	 
+			// while loops as long as a condition is true
+			int wI = 0;
+			while (wI < 20) {
+	 
+				// Only print even numbers
+				if(wI % 2 == 0) {
+					System.out.println(wI);
+					wI++;
+					// Jump back to the beginning of loop
+					continue;
+				}
+				if(wI >= 10) {
+					// Stop looping
+					break;
+				}
+				wI++;
+			}
+	 
+			// Do whiles execute at least once
+			int secretNum = 7;
+			int guess = 0;
+			do {
+				System.out.println("Guess : ");
+				if(sc.hasNextInt()){
+					guess = sc.nextInt();
+				}
+			}while(secretNum != guess);
+			System.out.println("You guessed it");
+}
+}
